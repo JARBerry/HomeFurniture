@@ -13,6 +13,7 @@
 
 import Foundation
 
+// This defines a class called room with properties name and furniture
 class Room {
     var name: String
     var furniture: [Furniture]

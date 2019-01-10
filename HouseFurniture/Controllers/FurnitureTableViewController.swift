@@ -19,6 +19,7 @@ class FurnitureTableViewController: UITableViewController {
         static let furnitureSegue = "ToFurnitureDetail"
     }
     
+    // loads up default rooms and furniture
     var rooms: [Room] = [
         Room(name: "Living Room",
              furniture: [Furniture(name: "Couch", description: "A comfy place to sit down."),
@@ -34,16 +35,16 @@ class FurnitureTableViewController: UITableViewController {
                          Furniture(name: "Closet", description: "Hang up your clothes to keep them unwrinkled.")])]
     
     // MARK: - Table view data source
-    
+    // number of sections is equal to number of rooms
     override func numberOfSections(in tableView: UITableView) -> Int {
         return rooms.count
     }
-    
+    // number of rows in section is equal to number of furniture
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rooms[section].furniture.count
     }
     
-    
+    // loads up cell with furniture name
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: PropertyKeys.furnitureCell, for: indexPath)

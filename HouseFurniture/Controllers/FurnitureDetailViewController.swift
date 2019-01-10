@@ -25,7 +25,7 @@ class FurnitureDetailViewController: UIViewController, UIImagePickerControllerDe
         
         updateView()
     }
-    
+    // This function checks if there is an image and if there is it will load up the image
     func updateView() {
         guard let furniture = furniture else {return}
         if let imageData = furniture.imageData,
@@ -48,7 +48,7 @@ class FurnitureDetailViewController: UIViewController, UIImagePickerControllerDe
         
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        
+        // selects whether camera or phot libray or if cancel button pressed
         let alertController = UIAlertController(title: "Choose Image Source", message: nil, preferredStyle: .actionSheet)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -79,13 +79,13 @@ class FurnitureDetailViewController: UIViewController, UIImagePickerControllerDe
 
     
  
-    
+    // animates the cancel button
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
     
     
-    
+    // tab action provides pop over to copy or share image
     @IBAction func actionButtonTapped(_ sender: Any) {
         
         guard
